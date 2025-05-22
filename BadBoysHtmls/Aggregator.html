@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Bad Boyz All-in-One</title>
+    <style>
+      body { margin:0; background:#111; color:#fff; font-family:sans-serif; }
+      iframe { width:100%; border:none; display:block; }
+    </style>
+  </head>
+  <body>
+    <!-- PHOTO LOGO -->
+    <iframe
+      id="logo-frame"
+      src="https://raw.githack.com/JauneDoe/badboyz-website-assets/main/BadBoysHtmls/PhotoLogo.html"
+      scrolling="no"
+    ></iframe>
+
+    <!-- WEBSITE SECTIONS -->
+    <iframe
+      id="website-frame"
+      src="https://raw.githack.com/JauneDoe/badboyz-website-assets/main/BadBoysHtmls/WebsiteSections.html"
+      scrolling="no"
+    ></iframe>
+
+    <!-- BOOKING FORM -->
+    <iframe
+      id="booking-frame"
+      src="https://raw.githack.com/JauneDoe/badboyz-website-assets/main/BadBoysHtmls/BookingForm.html"
+      scrolling="no"
+    ></iframe>
+
+    <script>
+      // When each iframe finishes loading, snap its height to its content
+      ['logo','website','booking'].forEach(id => {
+        const frame = document.getElementById(id + '-frame');
+        frame.onload = () => {
+          // use documentElement.scrollHeight for full page height
+          const h = frame.contentWindow.document.documentElement.scrollHeight;
+          frame.style.height = h + 'px';
+        };
+      });
+    </script>
+  </body>
+</html>
